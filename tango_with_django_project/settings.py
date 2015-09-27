@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'rango',
     'registration', # add in the registration package
     'bootstrap_toolkit',
+    'blog',
 )
 
 PASSWORD_HASHERS = (
