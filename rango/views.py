@@ -25,12 +25,12 @@ def index(request):
     if not visits:
 	visits = 1
     reset_last_visit_time = False
-    
+
     last_visit = request.session.get('last_visit')
-    
+
      # Does the cookie last_visit exist?
     if last_visit:
-        
+
         last_visit_time = datetime.strptime(last_visit[:-7], "%Y-%m-%d %H:%M:%S")
 
         # If it's been more than a day since the last visit...
@@ -42,10 +42,10 @@ def index(request):
         # Cookie last_visit doesn't exist, so flag that it should be set.
         reset_last_visit_time = True
 
-      
+
 
         #Obtain our Response object early so we can add cookie information.
-        
+
     if reset_last_visit_time:
         request.session['last_visit'] = str(datetime.now())
         request.session['visits'] = visits
@@ -54,10 +54,10 @@ def index(request):
     response = render(request,'rango/index.html', context_dict)
     return response
     # Render the response and send it back!
-    
-def category(request, category_name_slug):  
+
+def category(request, category_name_slug):
     context_dict = {}
-    try:       
+    try:
         category = Category.objects.get(slug=category_name_slug)
         context_dict['category_name'] = category.name
         pages = Page.objects.filter(category=category)
@@ -68,7 +68,7 @@ def category(request, category_name_slug):
         context_dict['category'] = category
 	context_dict['category_name_slug'] = category_name_slug
     except Category.DoesNotExist:
-        
+
         pass
 
     # Go render the response and return it to the client.
@@ -134,7 +134,7 @@ def register(request):
             'rango/register.html',
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
 
-   
+
 def add_category(request):
     # A HTTP POST?
     if request.method == 'POST':
