@@ -7,12 +7,13 @@ from django.conf.urls.static import static # New Import
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'tango_with_django_project.views.home', name='home'),
+    url(r'^$', 'portofolio.views.index', name='index'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^rango/', include('rango.urls')), # ADD THIS NEW TUPLE!
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^blog/', include('blog.urls')),
+    url(r'^portofolio/', include('portofolio.urls')),
 )
 
 
