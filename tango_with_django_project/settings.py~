@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'registration', # add in the registration package
     'bootstrap_toolkit',
     'blog',
+    'portofolio',
 )
 
 PASSWORD_HASHERS = (

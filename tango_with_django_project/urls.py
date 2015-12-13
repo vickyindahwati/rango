@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^portofolio/', include('portofolio.urls')),
+    url(r'^portofolionew/', include('portofolionew.urls')),
 )
 
 

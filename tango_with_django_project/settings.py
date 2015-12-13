@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'bootstrap_toolkit',
     'blog',
     'portofolio',
+    'portofolionew',
 )
 
 PASSWORD_HASHERS = (
