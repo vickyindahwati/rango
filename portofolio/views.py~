@@ -1,6 +1,21 @@
 from django.shortcuts import render
-
+from portofolio.models import exercise
 # Create your views here.
 def index(request):
-    context dict ={}
+    exercise_list = exercise.objects.order_by('name')
+    context_dict = {'exercises': exercise_list}
     return render (request, 'portofolio/index.html', context_dict)
+
+def exercise(request, exercise_name):
+    context_dict = {}
+    try:
+        exercise = Exercise.objects.get(name=exercise_name)
+        context_dict['exercise_name'] = exercise.name
+        context_dict['exercise'] = exercise
+    except Exercise.DoesNotExist:
+        # We get here if we didn't find the specified category.
+        # Don't do anything - the template displays the "no category" message for us.
+        pass
+
+    # Go render the response and return it to the client.
+    return render(request, 'portofolio/exlist.html', context_dict)

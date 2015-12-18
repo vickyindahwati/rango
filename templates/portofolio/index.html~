@@ -233,7 +233,7 @@
     <div class="heading"> 
       <!-- Heading -->
       <h2>Portfolio</h2>
-      <p>I have made some project by following the tutorial such as tangowithdjango.com and tutorial.djangogirls.org/</p>
+      <p>I have made some project by following the tutorial such as tangowithdjango.com and tutorial.djangogirls.org</p>
     </div>
     <div class="row">
       <nav id="filter" class="col-md-12">
@@ -250,7 +250,7 @@
               <div class="portfolio-item"> <img src="{% static 'images/portfolio/img1.png'%}" alt="" />
                 <div class="portfolio-desc align-center">
                   <div class="folio-info"> <a href="{% static 'images/portfolio/img1.png'%}" class="fancybox">
-                    <h5>Project Name</h5>
+                    <h5>Django Girls</h5>
                     <i class="fa fa-plus-square-o fa-2x"></i></a> </div>
                 </div>
               </div>
@@ -260,7 +260,7 @@
               <div class="portfolio-item"> <img src="{% static 'images/portfolio/img3.png'%}" alt="" />
                 <div class="portfolio-desc align-center">
                   <div class="folio-info"> <a href="{% static 'images/portfolio/img3.png'%}" class="fancybox">
-                    <h5>Project Name</h5>
+                    <h5>Rango</h5>
                     <i class="fa fa-plus-square-o fa-2x"></i></a> </div>
                 </div>
               </div>
@@ -270,7 +270,7 @@
               <div class="portfolio-item"> <img src="{% static 'images/portfolio/img4.png'%}" alt="" />
                 <div class="portfolio-desc align-center">
                   <div class="folio-info"> <a href="{% static 'images/portfolio/img4.png'%}" class="fancybox">
-                    <h5>Project Name</h5>
+                    <h5>Rango</h5>
                     <i class="fa fa-plus-square-o fa-2x"></i></a> </div>
                 </div>
               </div>
@@ -279,7 +279,7 @@
               <div class="portfolio-item"> <img src="{% static 'images/portfolio/img5.png'%}" alt="" />
                 <div class="portfolio-desc align-center">
                   <div class="folio-info"> <a href="{% static 'images/portfolio/img5.png'%}" class="fancybox">
-                    <h5>Project Name</h5>
+                    <h5>Rango</h5>
                     <i class="fa fa-plus-square-o fa-2x"></i></a> </div>
                 </div>
               </div>
@@ -288,13 +288,25 @@
               <div class="portfolio-item"> <img src="{% static 'images/portfolio/img6.png'%}" alt="" />
                 <div class="portfolio-desc align-center">
                   <div class="folio-info"> <a href="{% static 'images/portfolio/img6.png'%}" class="fancybox">
-                    <h5>Project Name</h5>
+                    <h5>Django Girls</h5>
                     <i class="fa fa-plus-square-o fa-2x"></i></a> </div>
                 </div>
               </div>
             </article>
-            
-           
+	       
+	<article class="col-sm-4 isotopeItem">
+	{% if exercises %}
+	       {% for exercise in exercises %}
+              <div class="portfolio-item"> <img src="{{exercise.picture.url}}" alt="" /></br>
+                <div class="portfolio-desc align-center">
+                  <div class="folio-info"> <a href="{{exercise.picture.url}}" class="fancybox">
+                    <h5>{{exercise.name}}</h5>
+                    <i class="fa fa-plus-square-o fa-2x"></i></a> </div>
+                </div>
+              </div>
+		{% endfor %}
+        {% endif %}
+            </article>
                </div>
         </div>
       </div>

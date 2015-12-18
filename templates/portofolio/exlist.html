@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PortofolioNew</title>
+    </head>
+
+    <body>
+        <h1>My Portofolio</h1>
+        {% if exercises %}
+	    <ul>
+	       {% for exercise in exercises %}
+            	<li> Name : {{exercise.name}}</li>
+	    	Description : {{exercise.desc}}</br>
+		<img src="{{exercise.picture.url}}" width="500">
+	       {% endfor %}
+	    </ul>
+        {% else %}
+            The specified portofolio does not exist!
+        {% endif %}
+    </body>
+</html>
